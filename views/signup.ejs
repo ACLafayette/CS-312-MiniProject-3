@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - My Blog</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create an Account</h1>
+        <p>Join my blogging community!</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Sign Up Here</h2>
+
+            <% if (error) { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+
+            <form action="/signup" method="POST">
+                <label for="user_id">User ID</label>
+                <input type="text" id="user_id"
+                       name="user_id" maxlength="255"
+                       required>
+
+                <label for="name">Your Name</label>
+                <input type="text" id="name"
+                       name="name" maxlength="255"
+                       required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password"
+                       name="password" minlength="8"
+                       required>
+
+                <button type="submit">Create Account</button>
+            </form>
+
+            <p>
+                Already have an account?
+                <a href="/signin">Sign In</a>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
